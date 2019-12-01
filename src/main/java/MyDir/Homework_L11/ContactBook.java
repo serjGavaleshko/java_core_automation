@@ -1,4 +1,4 @@
-package Homework_L11;
+package MyDir.Homework_L11;
 
 //Написать приложение “Телефонная книга”
 //        + В телефонной книге есть категории имен, которые задает пользователь
@@ -101,8 +101,10 @@ public class ContactBook {
                     if (!catList.contains(category)) {
                         categoryMap.put(null, category);
 
-                    }else System.out.println("Category name is already exists");
-                    break;
+                    } else {
+                        System.out.println("Category name is already exists");
+                        break;
+                    }
 
                 default:
 
