@@ -2,6 +2,7 @@ package MyDir.Homework_L11;
 
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -26,12 +27,18 @@ public class WebDriver {
         searchField.submit();
         Thread.sleep(5000);
 
+        List<WebElement> searchHostName = driver.findElements(By.className("iUh30"));
+        for(WebElement e : searchHostName) {
+
+              if (e.getText().contains("selenium.dev")) {
+                Assert.assertTrue(true);
+                System.out.println(e.getText());
+            }
+
+        }
 
 
-        List<WebElement> isSeleniumOnPage = (List<WebElement>) driver.findElement(By.className("iUh30 bc"));
-
-        System.out.println(isSeleniumOnPage);
-
+        driver.findElement(By.partialLinkText("selenium.dev")).isDisplayed();
 
         driver.quit();
 
