@@ -9,6 +9,8 @@
         <module name="java_core_automation" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="8" />
+    <bytecodeTargetLevel>
+      <module name="java_core_automation" target="8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

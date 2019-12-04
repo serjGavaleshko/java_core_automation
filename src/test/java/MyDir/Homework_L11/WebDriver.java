@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
+
 public class WebDriver {
 
     @Test
@@ -22,7 +24,15 @@ public class WebDriver {
         WebElement searchField = driver.findElement(By.name("q"));
         searchField.sendKeys("Selenium");
         searchField.submit();
-        Thread.sleep(500000);
+        Thread.sleep(5000);
+
+
+
+        List<WebElement> isSeleniumOnPage = (List<WebElement>) driver.findElement(By.className("iUh30 bc"));
+
+        System.out.println(isSeleniumOnPage);
+
+
         driver.quit();
 
     }
