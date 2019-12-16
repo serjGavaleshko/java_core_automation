@@ -15,7 +15,6 @@ import java.util.List;
 public class WebDriver {
 
     @Test
-
     public void doSomething() throws InterruptedException {
 
         WebDriverManager.chromedriver().setup();
@@ -28,28 +27,27 @@ public class WebDriver {
         searchField.submit();
         Thread.sleep(5000);
 
+        //List<WebElement> searchHostName = driver.findElements(By.className("iUh30"));
         List<WebElement> searchHostName = driver.findElements(By.className("iUh30"));
+
+        System.out.println("searchHostName size: " + searchHostName.size());
 
 List<String> searchHostNameString = new ArrayList<>();
 int increment = 0;
         for(WebElement e : searchHostName) {
             searchHostNameString.add(e.getText());
               if (e.getText().contains("selenium.dev")) {
-               // Assert.assertTrue(true);
-               // System.out.println(e.getText());
                 increment ++;
             }
         }
-        if (increment >= 1){Assert.assertTrue(true);
-        }else Assert.assertTrue(false);
 
+        Assert.assertTrue(increment > 0);
         System.out.println(searchHostNameString);
         //Assert.assertTrue(searchHostNameString.equals("https://selenium.dev"));
-
-
         driver.findElement(By.partialLinkText("selenium.dev")).isDisplayed();
 
         driver.quit();
+
 
     }
 }
