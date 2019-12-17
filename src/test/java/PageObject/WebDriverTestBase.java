@@ -1,18 +1,33 @@
 package PageObject;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Before;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public abstract class WebDriverTestBase {
+    RemoteWebDriver driver;
 
-    WebDriver driver = new FirefoxDriver();
+    public  WebDriverTestBase(){
+
+        WebDriverManager.chromedriver().setup();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--headless", "windows-size=1024,768");
+        this.driver = new ChromeDriver(options);
+        driver.
+    }
+
 
     @Before
     public void setUp() {
+
         System.out.println("setUp");
     }
+
     @After
-    public void tearDown() { driver.close(); }
+    public void tearDown() {
+        driver.close();
+    }
 }

@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
-public class NewsPage extends AbstractPage {
+public class NewsPage extends ClassWork14.AbstractPage {
     public NewsPage(WebDriver driver) { super(driver); }
     public NewsPage assertPostsCount(int count) {
         List posts = driver.findElements(By.className("post"));
