@@ -2,7 +2,7 @@ package PageObject;
 
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends AbstractPage {
+public class LoginPage extends ClassWork14.AbstractPage {
     private String url;
     public LoginPage(String url, WebDriver driver) {
         super(driver);
