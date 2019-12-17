@@ -1,5 +1,4 @@
-package ClassWork14;
-
+package PageObject;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +11,11 @@ public abstract class AbstractPage {
     }
     public void printText(String textBoxId, String text) {
         WebElement textBox = driver.findElement(By.id(textBoxId));
-        textBox.clear(); textBox.sendKeys(text);
+        textBox.clear();
+        textBox.sendKeys(text);
     }
-    public void click(String id) { WebElement button = driver.findElement(By.id(id)); button.click();
+    public void click(String id) {
+        WebElement button = driver.findElement(By.id(id));
+        button.click();
     }
 }

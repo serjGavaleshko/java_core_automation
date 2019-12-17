@@ -2,7 +2,7 @@ package PageObject;
 
 import org.junit.Test;
 
-public class PageObjectLikeTest extends WebDriverTestBase {
+public class PageObjectLikeTest extends PageObject.WebDriverTestBase {
     @Test
     public void testCreatePost() {
         User user = new User("ADMIN", "PASS");
