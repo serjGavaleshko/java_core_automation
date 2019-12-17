@@ -16,7 +16,7 @@ public abstract class WebDriverTestBase {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "windows-size=1024,768");
         this.driver = new ChromeDriver(options);
-        driver.
+
     }
 
 
