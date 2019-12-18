@@ -18,4 +18,8 @@ public abstract class AbstractPage {
         WebElement button = driver.findElement(By.id(id));
         button.click();
     }
+    public void clickBtn(String xpath) {
+        WebElement button = driver.findElement(By.xpath(xpath));
+        button.click();
+    }
 }

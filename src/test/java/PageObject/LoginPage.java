@@ -1,8 +1,10 @@
 package PageObject;
 
+
 import org.openqa.selenium.WebDriver;
 
-public class LoginPage extends ClassWork14.AbstractPage {
+
+public class LoginPage extends AbstractPage {
     private String url;
     public LoginPage(String url, WebDriver driver) {
         super(driver);
@@ -12,10 +14,11 @@ public class LoginPage extends ClassWork14.AbstractPage {
         driver.navigate().to(url);
         return this;
     }
+
     public NewsPage loginAs(User user) {
-        printText("login", user.login);
+        printText("username", user.login);
         printText("password", user.password);
-        click("loginBtn");
+        clickBtn("/html/body/main/section/form/footer/button");
         return new NewsPage(driver);
     }
 }

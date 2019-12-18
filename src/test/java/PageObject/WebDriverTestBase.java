@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.IOException;
+
 public abstract class WebDriverTestBase {
     RemoteWebDriver driver;
 
@@ -23,11 +25,12 @@ public abstract class WebDriverTestBase {
     @Before
     public void setUp() {
 
-        System.out.println("setUp");
+        System.out.println("System Initializing");
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(500);
         driver.close();
     }
 }
