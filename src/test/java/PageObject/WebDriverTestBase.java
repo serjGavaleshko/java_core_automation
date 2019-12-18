@@ -7,6 +7,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.io.IOException;
+
 public abstract class WebDriverTestBase {
     RemoteWebDriver driver;
 
@@ -16,18 +18,19 @@ public abstract class WebDriverTestBase {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "windows-size=1024,768");
         this.driver = new ChromeDriver(options);
-        driver.
+
     }
 
 
     @Before
     public void setUp() {
 
-        System.out.println("setUp");
+        System.out.println("System Initializing");
     }
 
     @After
-    public void tearDown() {
+    public void tearDown() throws InterruptedException {
+        Thread.sleep(500);
         driver.close();
     }
 }

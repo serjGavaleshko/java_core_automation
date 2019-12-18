@@ -2,10 +2,11 @@ package PageObject;
 
 import org.junit.Test;
 
-public class PageObjectLikeTest extends WebDriverTestBase {
+public class PageObjectLikeTest extends PageObject.WebDriverTestBase {
     @Test
     public void testCreatePost() {
-        User user = new User("ADMIN", "PASS");
+        User user = new User("admin", "valley51");
+
         Post post = new Post();
         post.setText("TEXT");
         post.setTitle("TITLE");
@@ -14,8 +15,9 @@ public class PageObjectLikeTest extends WebDriverTestBase {
         post.setText("TEXT2");
         post.setTitle("TITLE2");
 
-        LoginPage loginPage = new LoginPage("http://localhost", driver);
+        LoginPage loginPage = new LoginPage("https://dev.paazl.com/login.jsp", driver);
         NewsPage newsPage = loginPage.open().loginAs(user);
+
         newsPage.assertPostsCount(0)
                 .addPost(post)
                 .assertPostsCount(1);
