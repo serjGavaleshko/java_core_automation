@@ -15,10 +15,11 @@ public class LoginPage extends AbstractPage {
         return this;
     }
 
-    public NewsPage loginAs(User user) {
+    public ShippingOptionOverviewPage loginAs(User user) {
         printText("username", user.login);
         printText("password", user.password);
         clickBtn("/html/body/main/section/form/footer/button");
-        return new NewsPage(driver);
+        driver.navigate().to("https://dev.paazl.com/administrator/shippingoptions/overview.html");
+        return new ShippingOptionOverviewPage(driver);
     }
 }

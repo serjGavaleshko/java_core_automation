@@ -4,24 +4,14 @@ import org.junit.Test;
 
 public class PageObjectLikeTest extends PageObject.WebDriverTestBase {
     @Test
-    public void testCreatePost() {
+    public void testCheckShippingOptionQty() {
         User user = new User("admin", "valley51");
-
-        Post post = new Post();
-        post.setText("TEXT");
-        post.setTitle("TITLE");
-
-        Post post2 = new Post();
-        post.setText("TEXT2");
-        post.setTitle("TITLE2");
+        int dsoCount = 281;
 
         LoginPage loginPage = new LoginPage("https://dev.paazl.com/login.jsp", driver);
-        NewsPage newsPage = loginPage.open().loginAs(user);
+        ShippingOptionOverviewPage shippingOptionOverviewPage = loginPage.open().loginAs(user);
 
-        newsPage.assertPostsCount(0)
-                .addPost(post)
-                .assertPostsCount(1);
-        newsPage.addPost(post2)
-                .assertPostsCount(2);
+        shippingOptionOverviewPage.assertShippingOptionsCount(dsoCount)
+                .assertShippingOptionsCount(dsoCount);
     }
 }

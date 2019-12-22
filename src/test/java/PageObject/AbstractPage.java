@@ -14,10 +14,10 @@ public abstract class AbstractPage {
         textBox.clear();
         textBox.sendKeys(text);
     }
-    public void click(String id) {
-        WebElement button = driver.findElement(By.id(id));
-        button.click();
-    }
+//    public void click(String id) {
+//        WebElement button = driver.findElement(By.id(id));
+//        button.click();
+//    }
     public void clickBtn(String xpath) {
         WebElement button = driver.findElement(By.xpath(xpath));
         button.click();

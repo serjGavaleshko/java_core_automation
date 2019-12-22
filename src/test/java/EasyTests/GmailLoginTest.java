@@ -1,20 +1,25 @@
-package MyDir.Homework_L11;
+package EasyTests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+import org.junit.After;
+import org.junit.Assert;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import java.util.List;
 
 
 public class GmailLoginTest {
 
     @Test
 
-    public void gmailLoginTesting() throws InterruptedException {
+    public void testLoginPage() throws InterruptedException {
+
+
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
@@ -43,13 +48,11 @@ public class GmailLoginTest {
         logInPasswordNextButton.click();
         Thread.sleep(2000);
 
-        WebElement logInChecker = driver.findElement(By.className("gb_D gb_Oa gb_i"));
-        logInChecker.isDisplayed();
+        List logInChecker = driver.findElements(By.className("gb_D gb_Oa gb_i"));
 
-        Thread.sleep(5000);
+        Assert.assertEquals( 1, logInChecker.size());
 
-
-        driver.quit();
+        driver.close();
 
     }
 }

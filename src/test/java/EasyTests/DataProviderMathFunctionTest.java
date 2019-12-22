@@ -1,4 +1,4 @@
-package MyDir.Homework_L11;
+package EasyTests;
 
 import junitparams.FileParameters;
 import junitparams.JUnitParamsRunner;

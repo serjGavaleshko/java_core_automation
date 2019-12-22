@@ -1,6 +1,4 @@
-package MyDir.Homework_L11;
-
-
+package EasyTests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.Assert;
 import org.junit.Test;
@@ -25,30 +23,29 @@ public class WebDriver {
         WebElement searchField = driver.findElement(By.name("q"));
         searchField.sendKeys("Selenium");
         searchField.submit();
-        Thread.sleep(5000);
+        Thread.sleep(500);
 
-        //List<WebElement> searchHostName = driver.findElements(By.className("iUh30"));
+
         List<WebElement> searchHostName = driver.findElements(By.className("iUh30"));
 
         System.out.println("searchHostName size: " + searchHostName.size());
 
-List<String> searchHostNameString = new ArrayList<>();
-int increment = 0;
+        List<String> searchHostNameString = new ArrayList<>();
+        int increment = 0;
         for(WebElement e : searchHostName) {
             searchHostNameString.add(e.getText());
-              if (e.getText().contains("selenium.dev")) {
+            if (e.getText().contains("selenium.dev")) {
                 increment ++;
             }
         }
 
         Assert.assertTrue(increment > 0);
         System.out.println(searchHostNameString);
-        //Assert.assertTrue(searchHostNameString.equals("https://selenium.dev"));
-        driver.findElement(By.partialLinkText("selenium.dev")).isDisplayed();
+
+        Assert.assertTrue(driver.findElement(By.partialLinkText("selenium.dev")).isDisplayed());
 
         driver.quit();
 
 
     }
 }
-// проверить есть ли ссылки на сайт селениум.

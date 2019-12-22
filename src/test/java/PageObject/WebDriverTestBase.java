@@ -7,12 +7,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import java.io.IOException;
-
 public abstract class WebDriverTestBase {
     RemoteWebDriver driver;
 
-    public  WebDriverTestBase(){
+    public WebDriverTestBase() {
 
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
