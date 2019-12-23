@@ -3,6 +3,7 @@ package PageFactoryTest;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -22,7 +23,10 @@ public class WikipediaSearchTest {
         options.addArguments("--headless", "windows-size=1024,768");
         driver = new ChromeDriver(options);
     }
-
+    @Before
+    public void setUp(){
+        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+    }
     @After
 
     public void tearDown() {
@@ -31,18 +35,15 @@ public class WikipediaSearchTest {
 
     @Test
     public void wikipediaSearchTesting(){
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
+
         WikiSearchPage page = PageFactory.initElements(driver, WikiSearchPage.class);
         page.searchFor("Jenkins");
-
         List softwareList = driver.findElements(By.partialLinkText("Software"));
-
-            Assert.assertEquals(1, softwareList.size());
+        Assert.assertEquals(1, softwareList.size());
 
     }
     @Test
     public void titleContainsWikiTest(){
-        driver.get("https://en.wikipedia.org/wiki/Main_Page");
         Assert.assertTrue(driver.getTitle().toLowerCase().contains("wiki"));
     }
 }
