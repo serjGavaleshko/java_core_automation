@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: EasyTests.GmailLoginTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 20.544 s <<< FAILURE! - in EasyTests.GmailLoginTest
+EasyTests.GmailLoginTest.testLoginPage  Time elapsed: 20.543 s  <<< FAILURE!
+java.lang.AssertionError: expected:<1> but was:<0>
+	at EasyTests.GmailLoginTest.testLoginPage(GmailLoginTest.java:59)
+

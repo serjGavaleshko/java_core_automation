@@ -4,27 +4,33 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
 
-
 public class GmailLoginTest {
+    ChromeDriver driver;
 
+
+
+    public GmailLoginTest() {
+
+
+
+    }
     @Test
-
     public void testLoginPage() throws InterruptedException {
-
-
-
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "windows-size=1024,768");
-        ChromeDriver driver = new ChromeDriver(options);
+         driver = new ChromeDriver(options);
+
         driver.get("https://google.com");
         WebElement logInButton = driver.findElement(By.id("gb_70"));
         logInButton.click();
@@ -52,7 +58,19 @@ public class GmailLoginTest {
 
         Assert.assertEquals( 1, logInChecker.size());
 
-        driver.close();
 
+
+    }
+
+    @Before
+    public void setUp() {
+        System.out.println("Google Login Test Initializing");
+    }
+
+
+
+    @After
+    public void tearDown() {
+        driver.close();
     }
 }

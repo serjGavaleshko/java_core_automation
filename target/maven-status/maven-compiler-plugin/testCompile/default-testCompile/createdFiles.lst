@@ -1,10 +1,10 @@
 EasyTests\GmailLoginTest.class
-PageObject\ShippingOptionOverviewPage.class
-PageObject\LoginPage.class
 EasyTests\WebDriver.class
-PageObject\User.class
 EasyTests\DataProviderMathFunctionTest.class
 PageObject\PageObjectLikeTest.class
 PageObject\AbstractPage.class
+PageObject\ShippingOptionOverviewPage.class
+PageObject\LoginPage.class
+PageObject\User.class
 PageObject\WebDriverTestBase.class
 EasyTests\DataProviderMathFunctionTest$MathFunctions.class
