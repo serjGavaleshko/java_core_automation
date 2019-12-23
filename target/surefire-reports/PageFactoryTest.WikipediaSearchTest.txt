@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: PageObject.PageObjectLikeTest
+Test set: PageFactoryTest.WikipediaSearchTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.751 s - in PageObject.PageObjectLikeTest
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 21.025 s - in PageFactoryTest.WikipediaSearchTest

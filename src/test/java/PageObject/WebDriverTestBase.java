@@ -30,5 +30,6 @@ public abstract class WebDriverTestBase {
     public void tearDown() throws InterruptedException {
         Thread.sleep(500);
         driver.close();
+        System.out.println("Browser closed");
     }
 }
