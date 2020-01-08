@@ -10,7 +10,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebDriver {
+public class WebDriverTest {
 
     @Test
     public void doSomething() throws InterruptedException {
