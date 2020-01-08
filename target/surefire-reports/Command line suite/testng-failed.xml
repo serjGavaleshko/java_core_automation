@@ -3,6 +3,13 @@
 <suite verbose="0" name="Failed suite [Command line suite]">
   <test thread-count="5" verbose="0" name="Command line test(failed)">
     <classes>
+      <class name="EasyTests.GmailLoginTest">
+        <methods>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="testLoginPage"/>
+        </methods>
+      </class> <!-- EasyTests.GmailLoginTest -->
       <class name="NewTest">
         <methods>
           <include name="testTest"/>

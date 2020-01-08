@@ -1,1 +1,3 @@
 NewTest.class
+EasyTests\GmailLoginTest.class
+EasyTests\WebDriverTest.class
